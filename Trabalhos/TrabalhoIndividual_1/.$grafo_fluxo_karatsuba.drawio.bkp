@@ -1,0 +1,369 @@
+<mxfile host="app.diagrams.net" modified="2025-08-25T12:00:00.000Z" agent="5.0" etag="xyz789" version="21.6.5" type="device">
+  <diagram name="Grafo de Fluxo - Algoritmo Karatsuba" id="grafo-karatsuba-melhorado">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- CABEÇALHO E TÍTULO -->
+        <mxCell id="header-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#dee2e6;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="50" y="20" width="1300" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="titulo-principal" value="GRAFO DE FLUXO DE CONTROLE - ALGORITMO DE KARATSUBA" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;fontColor=#1f2937;" vertex="1" parent="1">
+          <mxGeometry x="200" y="35" width="1000" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="subtitulo" value="Análise de Complexidade Ciclomática • Pedro Carbonaro • FPAA 2025" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#6b7280;" vertex="1" parent="1">
+          <mxGeometry x="200" y="65" width="1000" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- FLUXO PRINCIPAL - COLUNA CENTRAL -->
+        
+        <!-- Nó 1: INÍCIO -->
+        <mxCell id="inicio" value="INÍCIO&#xa;karatsuba(x, y)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#10b981;strokeColor=#059669;strokeWidth=3;fontSize=14;fontStyle=1;fontColor=white;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="140" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Nó 2: DECISÃO PRINCIPAL -->
+        <mxCell id="decisao" value="x &lt; 10 OR y &lt; 10 ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f59e0b;strokeColor=#d97706;strokeWidth=3;fontSize=13;fontStyle=1;fontColor=white;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="260" width="240" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- RAMO ESQUERDO - CASO BASE -->
+        <mxCell id="caso-base" value="CASO BASE&#xa;return x * y" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dc2626;strokeColor=#b91c1c;strokeWidth=3;fontSize=14;fontStyle=1;fontColor=white;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="400" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- RAMO DIREITO - CASO RECURSIVO -->
+        
+        <!-- Nó 3: CÁLCULO INICIAL -->
+        <mxCell id="calc-inicial" value="PREPARAÇÃO&#xa;n = max(len(str(x)), len(str(y)))&#xa;m = n // 2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3b82f6;strokeColor=#1d4ed8;strokeWidth=3;fontSize=12;fontStyle=1;fontColor=white;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="400" width="220" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Nó 4: DIVISÃO DOS NÚMEROS -->
+        <mxCell id="divisao" value="DIVISÃO&#xa;a = x // (10^m)    b = x % (10^m)&#xa;c = y // (10^m)    d = y % (10^m)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3b82f6;strokeColor=#1d4ed8;strokeWidth=3;fontSize=11;fontStyle=1;fontColor=white;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="520" width="260" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- BLOCO DAS TRÊS RECURSÕES - LAYOUT SIMÉTRICO -->
+        
+        <!-- Recursão 1: AC -->
+        <mxCell id="recursao-ac" value="RECURSÃO 1&#xa;ac = karatsuba(a, c)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8b5cf6;strokeColor=#7c3aed;strokeWidth=3;fontSize=12;fontStyle=1;fontColor=white;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="640" width="180" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Recursão 2: BD -->
+        <mxCell id="recursao-bd" value="RECURSÃO 2&#xa;bd = karatsuba(b, d)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8b5cf6;strokeColor=#7c3aed;strokeWidth=3;fontSize=12;fontStyle=1;fontColor=white;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="640" width="180" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Recursão 3: (A+B)(C+D) -->
+        <mxCell id="recursao-abcd" value="RECURSÃO 3&#xa;temp = karatsuba(a+b, c+d)&#xa;ad_plus_bc = temp - ac - bd" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8b5cf6;strokeColor=#7c3aed;strokeWidth=3;fontSize=11;fontStyle=1;fontColor=white;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="820" y="640" width="200" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Nó 5: COMBINAÇÃO FINAL -->
+        <mxCell id="combinacao" value="COMBINAÇÃO FINAL&#xa;result = ac × 10^(2m) + ad_plus_bc × 10^m + bd" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#059669;strokeColor=#047857;strokeWidth=3;fontSize=12;fontStyle=1;fontColor=white;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="780" width="280" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Nó 6: FIM -->
+        <mxCell id="fim" value="FIM&#xa;return result" style="ellipse;whiteSpace=wrap;html=1;fillColor=#10b981;strokeColor=#059669;strokeWidth=3;fontSize=14;fontStyle=1;fontColor=white;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="900" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- ARESTAS PRINCIPAIS -->
+        
+        <!-- Fluxo: Início → Decisão -->
+        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#374151;endArrow=classic;endSize=8;" edge="1" parent="1" source="inicio" target="decisao">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Fluxo: Decisão → Caso Base (TRUE) -->
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#dc2626;endArrow=classic;endSize=8;" edge="1" parent="1" source="decisao" target="caso-base">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="320" />
+              <mxPoint x="300" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Fluxo: Decisão → Preparação (FALSE) -->
+        <mxCell id="edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#3b82f6;endArrow=classic;endSize=8;" edge="1" parent="1" source="decisao" target="calc-inicial">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="320" />
+              <mxPoint x="1110" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Fluxo: Preparação → Divisão -->
+        <mxCell id="edge4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#3b82f6;endArrow=classic;endSize=8;" edge="1" parent="1" source="calc-inicial" target="divisao">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Fluxo: Divisão → Recursões (3 caminhos paralelos) -->
+        <mxCell id="edge5a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#8b5cf6;endArrow=classic;endSize=8;" edge="1" parent="1" source="divisao" target="recursao-ac">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1110" y="620" />
+              <mxPoint x="490" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="edge5b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#8b5cf6;endArrow=classic;endSize=8;" edge="1" parent="1" source="divisao" target="recursao-bd">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1110" y="620" />
+              <mxPoint x="700" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="edge5c" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#8b5cf6;endArrow=classic;endSize=8;" edge="1" parent="1" source="divisao" target="recursao-abcd">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1110" y="620" />
+              <mxPoint x="920" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Fluxo: Recursões → Combinação -->
+        <mxCell id="edge6a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#059669;endArrow=classic;endSize=8;" edge="1" parent="1" source="recursao-ac" target="combinacao">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="760" />
+              <mxPoint x="650" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="edge6b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#059669;endArrow=classic;endSize=8;" edge="1" parent="1" source="recursao-bd" target="combinacao">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge6c" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#059669;endArrow=classic;endSize=8;" edge="1" parent="1" source="recursao-abcd" target="combinacao">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="760" />
+              <mxPoint x="750" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Fluxo: Caso Base → Fim -->
+        <mxCell id="edge7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#374151;endArrow=classic;endSize=8;" edge="1" parent="1" source="caso-base" target="fim">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="940" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Fluxo: Combinação → Fim -->
+        <mxCell id="edge8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#374151;endArrow=classic;endSize=8;" edge="1" parent="1" source="combinacao" target="fim">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- LABELS DE DECISÃO -->
+        <mxCell id="label-true" value="TRUE&#xa;(Caso Base)" style="text;html=1;strokeColor=none;fillColor=#fef2f2;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;fontStyle=1;fontColor=#dc2626;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="290" width="80" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="label-false" value="FALSE&#xa;(Recursivo)" style="text;html=1;strokeColor=none;fillColor=#eff6ff;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;fontStyle=1;fontColor=#3b82f6;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="290" width="80" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- INDICADORES DE RECURSÃO -->
+        <mxCell id="recursive-indicator-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8b5cf6;dashed=1;dashPattern=5 5;endArrow=classic;endSize=6;" edge="1" parent="1" source="recursao-ac" target="inicio">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="680" />
+              <mxPoint x="100" y="680" />
+              <mxPoint x="100" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="recursive-indicator-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8b5cf6;dashed=1;dashPattern=5 5;endArrow=classic;endSize=6;" edge="1" parent="1" source="recursao-bd" target="inicio">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="640" />
+              <mxPoint x="50" y="640" />
+              <mxPoint x="50" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="recursive-indicator-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8b5cf6;dashed=1;dashPattern=5 5;endArrow=classic;endSize=6;" edge="1" parent="1" source="recursao-abcd" target="inicio">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="680" />
+              <mxPoint x="1320" y="680" />
+              <mxPoint x="1320" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- LEGENDA ORGANIZADA -->
+        <mxCell id="legenda-container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="50" y="140" width="280" height="320" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legenda-titulo" value="LEGENDA DO DIAGRAMA" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#1f2937;" vertex="1" parent="1">
+          <mxGeometry x="70" y="155" width="240" height="25" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legenda-nos" value="TIPOS DE NÓS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#374151;" vertex="1" parent="1">
+          <mxGeometry x="70" y="185" width="240" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="no-inicio-exemplo" value="Início/Fim" style="ellipse;whiteSpace=wrap;html=1;fillColor=#10b981;strokeColor=#059669;fontSize=10;fontColor=white;" vertex="1" parent="1">
+          <mxGeometry x="70" y="210" width="80" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="no-decisao-exemplo" value="Decisão" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f59e0b;strokeColor=#d97706;fontSize=10;fontColor=white;" vertex="1" parent="1">
+          <mxGeometry x="160" y="210" width="60" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="no-processo-exemplo" value="Processo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3b82f6;strokeColor=#1d4ed8;fontSize=10;fontColor=white;" vertex="1" parent="1">
+          <mxGeometry x="230" y="210" width="80" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="no-recursao-exemplo" value="Recursão" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8b5cf6;strokeColor=#7c3aed;fontSize=10;fontColor=white;" vertex="1" parent="1">
+          <mxGeometry x="70" y="250" width="80" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="no-base-exemplo" value="Caso Base" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dc2626;strokeColor=#b91c1c;fontSize=10;fontColor=white;" vertex="1" parent="1">
+          <mxGeometry x="160" y="250" width="80" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legenda-arestas" value="TIPOS DE ARESTAS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#374151;" vertex="1" parent="1">
+          <mxGeometry x="70" y="290" width="240" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="aresta-normal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#374151;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="70" y="325" as="sourcePoint" />
+            <mxPoint x="120" y="325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aresta-normal-label" value="Fluxo Normal" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#374151;" vertex="1" parent="1">
+          <mxGeometry x="130" y="315" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="aresta-recursiva" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8b5cf6;dashed=1;dashPattern=5 5;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="70" y="345" as="sourcePoint" />
+            <mxPoint x="120" y="345" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aresta-recursiva-label" value="Chamada Recursiva" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#8b5cf6;" vertex="1" parent="1">
+          <mxGeometry x="130" y="335" width="100" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="aresta-true" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#dc2626;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="70" y="365" as="sourcePoint" />
+            <mxPoint x="120" y="365" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aresta-true-label" value="Decisão TRUE" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#dc2626;" vertex="1" parent="1">
+          <mxGeometry x="130" y="355" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="aresta-false" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#3b82f6;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="70" y="385" as="sourcePoint" />
+            <mxPoint x="120" y="385" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aresta-false-label" value="Decisão FALSE" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#3b82f6;" vertex="1" parent="1">
+          <mxGeometry x="130" y="375" width="90" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legenda-complexidade" value="COMPLEXIDADE CICLOMÁTICA" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#374151;" vertex="1" parent="1">
+          <mxGeometry x="70" y="405" width="240" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="formula-complexidade" value="m = e - n + 2p&#xa;m = 10 - 8 + 2(1) = 4&#xa;&#xa;• 8 nós principais&#xa;• 10 arestas&#xa;• 1 componente conexo" style="text;html=1;strokeColor=none;fillColor=#fef9c3;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=10;fontColor=#78350f;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="70" y="425" width="240" height="25" as="geometry" />
+        </mxCell>
+        
+        <!-- ANÁLISE TÉCNICA -->
+        <mxCell id="analise-container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="50" y="480" width="280" height="180" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="analise-titulo" value="ANÁLISE TÉCNICA" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#15803d;" vertex="1" parent="1">
+          <mxGeometry x="70" y="495" width="240" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="caminhos-independentes" value="CAMINHOS INDEPENDENTES:&#xa;&#xa;1) Início → Decisão → Caso Base → Fim&#xa;   (Para números &lt; 10)&#xa;&#xa;2) Início → Decisão → Preparação →&#xa;   Divisão → Recursões → Combinação → Fim&#xa;   (Para números ≥ 10)&#xa;&#xa;3) Caminhos recursivos internos&#xa;   (Para cada chamada karatsuba)&#xa;&#xa;4) Convergência na Combinação Final" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=9;fontColor=#15803d;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="70" y="520" width="240" height="130" as="geometry" />
+        </mxCell>
+        
+        <!-- INFORMAÇÕES ALGORITMO -->
+        <mxCell id="info-container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fffbeb;strokeColor=#f59e0b;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="50" y="680" width="280" height="120" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="info-titulo" value="INFORMAÇÕES DO ALGORITMO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#d97706;" vertex="1" parent="1">
+          <mxGeometry x="70" y="695" width="240" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="info-detalhes" value="Complexidade Temporal: O(n^1.585)&#xa;Complexidade Espacial: O(log n)&#xa;Tipo: Dividir e Conquistar&#xa;Autor: Anatoly Karatsuba (1960)&#xa;Aplicação: Multiplicação eficiente&#xa;Vantagem: Reduz de O(n²) para O(n^1.585)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#d97706;fontFamily=Arial;" vertex="1" parent="1">
+          <mxGeometry x="70" y="720" width="240" height="70" as="geometry" />
+        </mxCell>
+        
+        <!-- NUMERAÇÃO DOS NÓS -->
+        <mxCell id="num1" value="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fbbf24;strokeColor=#f59e0b;fontSize=12;fontStyle=1;fontColor=white;" vertex="1" parent="1">
+          <mxGeometry x="580" y="150" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="num2" value="2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fbbf24;strokeColor=#f59e0b;fontSize=12;fontStyle=1;fontColor=white;" vertex="1" parent="1">
+          <mxGeometry x="540" y="280" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="num3" value="3" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fbbf24;strokeColor=#f59e0b;fontSize=12;fontStyle=1;fontColor=white;" vertex="1" parent="1">
+          <mxGeometry x="180" y="410" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="num4" value="4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fbbf24;strokeColor=#f59e0b;fontSize=12;fontStyle=1;fontColor=white;" vertex="1" parent="1">
+          <mxGeometry x="960" y="410" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="num5" value="5" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fbbf24;strokeColor=#f59e0b;fontSize=12;fontStyle=1;fontColor=white;" vertex="1" parent="1">
+          <mxGeometry x="940" y="530" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="num6a" value="6a" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fbbf24;strokeColor=#f59e0b;fontSize=10;fontStyle=1;fontColor=white;" vertex="1" parent="1">
+          <mxGeometry x="360" y="650" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="num6b" value="6b" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fbbf24;strokeColor=#f59e0b;fontSize=10;fontStyle=1;fontColor=white;" vertex="1" parent="1">
+          <mxGeometry x="570" y="650" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="num6c" value="6c" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fbbf24;strokeColor=#f59e0b;fontSize=10;fontStyle=1;fontColor=white;" vertex="1" parent="1">
+          <mxGeometry x="780" y="650" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="num7" value="7" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fbbf24;strokeColor=#f59e0b;fontSize=12;fontStyle=1;fontColor=white;" vertex="1" parent="1">
+          <mxGeometry x="520" y="790" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="num8" value="8" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fbbf24;strokeColor=#f59e0b;fontSize=12;fontStyle=1;fontColor=white;" vertex="1" parent="1">
+          <mxGeometry x="580" y="910" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
