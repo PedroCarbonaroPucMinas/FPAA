@@ -75,12 +75,6 @@ python view.py
 
 O grafo será desenhado, mostrando todos os vértices e arestas, e o Caminho Hamiltoniano (se encontrado) será destacado em vermelho.
 
-### Exemplo de visualização
-
-![Exemplo de visualização do grafo](exemplo_grafo.png)
-
-O código em `view.py` permite visualizar todos os exemplos de grafos do projeto.
-
 ## Relatório Técnico
 
 ### Classes de Complexidade: P, NP, NP-Completo, NP-Difícil
