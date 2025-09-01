@@ -1,7 +1,5 @@
 # Algoritmo de Seleção Simultânea do Maior e do Menor Elementos (MaxMin Select)
 
-![Diagrama do Algoritmo MaxMin Select](./assets/maxmin_select_diagram.png)
-
 ## Descrição do Projeto
 
 Este projeto implementa o algoritmo de seleção simultânea do maior e do menor elementos de uma sequência de números (MaxMin Select) utilizando a abordagem de divisão e conquista em Python. O algoritmo reduz o número de comparações necessárias em comparação com uma abordagem ingênua, sendo uma aplicação clássica do paradigma de divisão e conquista.
