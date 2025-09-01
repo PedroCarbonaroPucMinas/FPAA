@@ -1,0 +1,169 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6">
+  <diagram id="maxmin_select_algorithm" name="MaxMin Select Algorithm">
+    <mxGraphModel dx="1281" dy="708" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="MaxMin Select Algorithm&#xa;Divisão e Conquista" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;fontSize=14;align=center;arcSize=8;verticalAlign=top;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="385" y="20" width="400" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Problema Original&#xa;Encontrar MAX e MIN na lista [5, 2, 9, 1, 7, 3, 8, 6, 4]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;fontSize=14;align=center;arcSize=8;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="385" y="100" width="400" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="3" target="5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="420" as="sourcePoint" />
+            <mxPoint x="585" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5" value="NÍVEL 1: Divisão em 2 subproblemas" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;shadow=1;fontSize=13;fontColor=#333333;verticalAlign=top;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="285" y="200" width="600" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Subproblema 1&#xa;Encontrar MAX e MIN em [5, 2, 9, 1, 7]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;shadow=1;fontSize=13;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="335" y="250" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Subproblema 2&#xa;Encontrar MAX e MIN em [3, 8, 6, 4]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;shadow=1;fontSize=13;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="595" y="250" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="6" target="10" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="420" as="sourcePoint" />
+            <mxPoint x="455" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="7" target="10" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="420" as="sourcePoint" />
+            <mxPoint x="715" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="10" value="NÍVEL 2: Divisão em 4 subproblemas" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;shadow=1;fontSize=13;fontColor=#333333;verticalAlign=top;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="285" y="370" width="600" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Subproblema 1.1&#xa;MAX e MIN em [5, 2, 9]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=1;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="335" y="410" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Subproblema 1.2&#xa;MAX e MIN em [1, 7]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=1;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="465" y="410" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Subproblema 2.1&#xa;MAX e MIN em [3, 8]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=1;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="595" y="410" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="Subproblema 2.2&#xa;MAX e MIN em [6, 4]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=1;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="725" y="410" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="11" target="18" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="550" as="sourcePoint" />
+            <mxPoint x="390" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="12" target="18" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="550" as="sourcePoint" />
+            <mxPoint x="520" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="13" target="18" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="550" as="sourcePoint" />
+            <mxPoint x="640" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="18" value="NÍVEL 3: Casos Base e Combinação dos Resultados" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;shadow=1;fontSize=13;fontColor=#333333;verticalAlign=top;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="285" y="545" width="600" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="14" target="18" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="550" as="sourcePoint" />
+            <mxPoint x="780" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="20" value="Subproblema 1.1&#xa;[5, 2, 9]&#xa;MAX = 9, MIN = 2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;shadow=1;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="335" y="580" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="Subproblema 1.2&#xa;[1, 7]&#xa;MAX = 7, MIN = 1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;shadow=1;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="465" y="580" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="Subproblema 2.1&#xa;[3, 8]&#xa;MAX = 8, MIN = 3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;shadow=1;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="595" y="580" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="Subproblema 2.2&#xa;[6, 4]&#xa;MAX = 6, MIN = 4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;shadow=1;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="725" y="580" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="20" target="26" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="550" as="sourcePoint" />
+            <mxPoint x="390" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="25" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="21" target="26" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="550" as="sourcePoint" />
+            <mxPoint x="478" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="26" value="Combinação do Subproblema 1&#xa;MAX = max(9, 7) = 9&#xa;MIN = min(2, 1) = 1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;shadow=1;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="380" y="720" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="Combinação do Subproblema 2&#xa;MAX = max(8, 6) = 8&#xa;MIN = min(3, 4) = 3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;shadow=1;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="620" y="720" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="22" target="27" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="550" as="sourcePoint" />
+            <mxPoint x="660" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="29" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="23" target="27" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="550" as="sourcePoint" />
+            <mxPoint x="780" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="30" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="26" target="31" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="750" as="sourcePoint" />
+            <mxPoint x="480" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="31" value="Resultado Final&#xa;MAX = max(9, 8) = 9&#xa;MIN = min(1, 3) = 1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;shadow=1;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="485" y="830" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="27" target="31" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="750" as="sourcePoint" />
+            <mxPoint x="690" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="33" value="Divisão: 0 comparações" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;fontSize=11;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="690" y="170" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="Divisão: 0 comparações" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;fontSize=11;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="690" y="340" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="Casos base: 1 comparação por par&#xa;Total: 4 comparações" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;fontSize=11;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="680" y="510" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="Combinação: 2 comparações (max e min)&#xa;Total: 2 comparações" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;fontSize=11;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="790" y="690" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="Combinação final: 2 comparações (max e min)&#xa;Total: 2 comparações" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;fontSize=11;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="725" y="800" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="Total de Comparações: 4 (casos base) + 2 (combinação nível 2) + 2 (combinação nível 1) = 8 comparações&#xa;Para n=9 elementos: aproximadamente 3n/2 - 2 = 11.5 comparações (teórico)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;fontSize=12;verticalAlign=middle;align=center;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="385" y="920" width="400" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="39" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="31" target="38" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="750" as="sourcePoint" />
+            <mxPoint x="610" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="40" value="Legenda de Cores:&#xa;Amarelo - Problema Original&#xa;Roxo - Subproblemas de Nível 1&#xa;Verde - Subproblemas de Nível 2&#xa;Laranja - Casos Base/Subproblemas de Nível 3&#xa;Rosa - Combinações Intermediárias&#xa;Verde claro - Resultado Final" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;shadow=1;fontSize=11;align=left;verticalAlign=top;fontColor=#333333;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="20" y="380" width="230" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
